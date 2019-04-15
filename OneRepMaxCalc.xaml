@@ -1,0 +1,39 @@
+﻿<Window
+    xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls" x:Class="Lifting_App.OneRepMaxCalc"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lifting_App"
+        mc:Ignorable="d"
+        Title="OneRepMaxCalc" Height="450" Width="400"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            
+        </Grid.ColumnDefinitions>
+
+        <Label Height="50" Width="180" VerticalAlignment="Top" Grid.Row="0" Grid.ColumnSpan="2" Content="Enter Weight" FontWeight="Bold" FontSize="25">  </Label>
+        <TextBox Name="Weight" Height="50" Width="180" VerticalAlignment="Bottom" Grid.Row="0" Grid.ColumnSpan="2" FontWeight="Bold" TextChanged="Weight_TextChanged"></TextBox>
+
+        <Label Height="50" Width="180" VerticalAlignment="Top" Grid.Row="1" Grid.ColumnSpan="2" Content="Enter Reps" FontWeight="Bold" FontSize="25"></Label>
+        <TextBox Name="Reps" Height="50" Width="180" VerticalAlignment="Bottom" Grid.Row="1" Grid.ColumnSpan="2" FontWeight="Bold" TextChanged="Reps_TextChanged" ></TextBox>
+
+        <Button Name="CalcMax" Height="50" Width="180" Content="Calculate Max" Background="Blue"  VerticalAlignment="Center" Grid.Row="2" Grid.ColumnSpan="2" FontSize="20" Click="CalcMax_Click"  ></Button>
+        <TextBox Name="Max" Height="70" Width="180" VerticalAlignment="Center" Grid.Row="3" Grid.ColumnSpan="2" FontWeight="Bold" FontSize="20" > </TextBox>
+        
+        
+        
+    </Grid>
+</Window>

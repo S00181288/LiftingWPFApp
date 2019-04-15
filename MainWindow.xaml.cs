@@ -33,7 +33,13 @@ namespace Lifting_App
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-     
+          /*  Window2 window2 = new Window2();
+            window2.Owner = this;
+            window2.ShowDialog(); */
+
+            OneRepMaxCalc oneRepMax = new OneRepMaxCalc();
+            oneRepMax.Owner = this;
+            oneRepMax.ShowDialog();
         }
     }
 }
