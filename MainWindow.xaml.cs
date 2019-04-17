@@ -28,7 +28,9 @@ namespace Lifting_App
 
         private void TDEECalc(object sender, RoutedEventArgs e)
         {
-
+            TdeeCaclculatorWindow Tdee = new TdeeCaclculatorWindow();
+            Tdee.Owner = this;
+            Tdee.ShowDialog();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -40,6 +42,14 @@ namespace Lifting_App
             OneRepMaxCalc oneRepMax = new OneRepMaxCalc();
             oneRepMax.Owner = this;
             oneRepMax.ShowDialog();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            LiftingPlans LiftingPlans = new LiftingPlans();
+            LiftingPlans.Owner = this;
+            LiftingPlans.ShowDialog();
+
         }
     }
 }

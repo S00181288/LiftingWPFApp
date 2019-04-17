@@ -27,20 +27,16 @@ namespace Lifting_App
 
         private void CalcMax_Click(object sender, RoutedEventArgs e)
         {
+
             int weightcalc = int.Parse(Weight.Text);
             int repscalc = int.Parse(Reps.Text);
 
-         /*   if(repscalc != )
-            {
-
-            } */
-
             double RepsMultiple = 0;
 
-            if(repscalc > 10 || repscalc <= 0)
+            if(repscalc > 10 || repscalc <= 0 || weightcalc <= 0)
             {
 
-                MessageBox.Show("Enter a rep range between 1 and 10.", "Alert", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Enter a rep range between 1 and 10. And a weight above 0.", "Alert", MessageBoxButton.OK, MessageBoxImage.Information);
 
             }
             else
@@ -88,31 +84,17 @@ namespace Lifting_App
 
                         break;
 
-
-
                     default:
                         break;
                 }
 
                 double Estimate = weightcalc * RepsMultiple;
 
-
-
                 string MaxEstimate = string.Format("Max Estimate {0} {1}", Environment.NewLine, Estimate);
                 Max.Text = (MaxEstimate);
 
             }
-
-
-
-            //string text = "Your 1 rep max estimate is: ";
-
           
-        }
-
-        private void Weight_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
 
         private void Reps_TextChanged(object sender, TextChangedEventArgs e)
@@ -132,6 +114,29 @@ namespace Lifting_App
                         count += 1;
                 }
             }
+
+            textBox.Text = newText;
+            textBox.SelectionStart = selectionStart <= textBox.Text.Length ? selectionStart : textBox.Text.Length;
+        }
+
+        private void Weight_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            //Prevents any key other than numeric key to be pressed inside form.
+            TextBox textBox = sender as TextBox;
+            Int32 selectionStart = textBox.SelectionStart;
+            Int32 selectionLength = textBox.SelectionLength;
+            String newText = String.Empty;
+            int count = 0;
+            foreach (Char c in textBox.Text.ToCharArray())
+            {
+                if (Char.IsDigit(c) || Char.IsControl(c) || (c == '.' && count == 0))
+                {
+                    newText += c;
+                    if (c == '.')
+                        count += 1;
+                }
+            }
+
             textBox.Text = newText;
             textBox.SelectionStart = selectionStart <= textBox.Text.Length ? selectionStart : textBox.Text.Length;
         }

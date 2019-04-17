@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="OneRepMaxCalc" Height="450" Width="400"
         WindowStartupLocation="CenterScreen">
-    <Grid>
+    <Grid Background="Black">
 
 
         <Grid.RowDefinitions>
@@ -24,14 +24,14 @@
             
         </Grid.ColumnDefinitions>
 
-        <Label Height="50" Width="180" VerticalAlignment="Top" Grid.Row="0" Grid.ColumnSpan="2" Content="Enter Weight" FontWeight="Bold" FontSize="25">  </Label>
-        <TextBox Name="Weight" Height="50" Width="180" VerticalAlignment="Bottom" Grid.Row="0" Grid.ColumnSpan="2" FontWeight="Bold" TextChanged="Weight_TextChanged"></TextBox>
+        <Label Foreground="White" BorderBrush="White" Height="50" Width="180" VerticalAlignment="Top" Grid.Row="0" Grid.ColumnSpan="2" Content="Enter Weight" FontWeight="Bold" FontSize="25">  </Label>
+        <TextBox Controls:TextBoxHelper.Watermark="Enter wegith (kg)" Name="Weight" Height="50" Width="180" VerticalAlignment="Bottom" Grid.Row="0" Grid.ColumnSpan="2" FontWeight="Bold" FontSize="20" TextChanged="Weight_TextChanged"></TextBox>
 
-        <Label Height="50" Width="180" VerticalAlignment="Top" Grid.Row="1" Grid.ColumnSpan="2" Content="Enter Reps" FontWeight="Bold" FontSize="25"></Label>
-        <TextBox Name="Reps" Height="50" Width="180" VerticalAlignment="Bottom" Grid.Row="1" Grid.ColumnSpan="2" FontWeight="Bold" TextChanged="Reps_TextChanged" ></TextBox>
+        <Label BorderBrush="White" Foreground="White" Height="50" Width="180" VerticalAlignment="Top" Grid.Row="1" Grid.ColumnSpan="2" Content="Enter Reps" FontWeight="Bold" FontSize="25"></Label>
+        <TextBox Controls:TextBoxHelper.Watermark="Enter Reps (1-10)" Name="Reps" Height="50" Width="180" VerticalAlignment="Bottom" Grid.Row="1" Grid.ColumnSpan="2" FontWeight="Bold" TextChanged="Reps_TextChanged" FontSize="20"></TextBox>
 
-        <Button Name="CalcMax" Height="50" Width="180" Content="Calculate Max" Background="Blue"  VerticalAlignment="Center" Grid.Row="2" Grid.ColumnSpan="2" FontSize="20" Click="CalcMax_Click"  ></Button>
-        <TextBox Name="Max" Height="70" Width="180" VerticalAlignment="Center" Grid.Row="3" Grid.ColumnSpan="2" FontWeight="Bold" FontSize="20" > </TextBox>
+        <Button  Name="CalcMax" Height="50" Width="180" Content="Calculate Max" Background="Blue"  VerticalAlignment="Center" Grid.Row="2" Grid.ColumnSpan="2" FontSize="20" Click="CalcMax_Click"  ></Button>
+        <TextBox Controls:TextBoxHelper.Watermark="Max Estimate" Name="Max" Height="70" Width="180" VerticalAlignment="Center" Grid.Row="3" Grid.ColumnSpan="2" FontWeight="Bold" FontSize="20" > </TextBox>
         
         
         

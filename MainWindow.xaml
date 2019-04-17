@@ -11,7 +11,11 @@
     
    
 
-    <Grid>
+    <Grid >
+
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\conor\Desktop\Lifting App\Images\Weights.jpg"/>
+        </Grid.Background>
 
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -28,14 +32,15 @@
         </Grid.ColumnDefinitions>
 
 
-        <Button  Height="50" Width="180" Content="Lifting plans"   Background="Blue" VerticalAlignment="Center" FontSize="20"  ></Button>
+        <Button  Height="50" Width="180" Content="Lifting plans"   Background="Blue" VerticalAlignment="Center" FontSize="20" Click="Button_Click_1"  ></Button>
         <Button  Height="50" Width="180" Content="Food Tracker"   Background="Blue" VerticalAlignment="Center" Grid.Row="1" FontSize="20"></Button>
         <Button  Height="50" Width="180" Content="1Rep Max Calc"   Background="Blue" VerticalAlignment="Center" Grid.Row="2" FontSize="20" Click="Button_Click"></Button>
         <Button  Height="50" Width="180" Content="TDEE Calculator"   Background="Blue" VerticalAlignment="Center" Grid.Row="3" FontSize="20" Click="TDEECalc" ></Button>
             
         
 
-        <Label Grid.ColumnSpan="2" Grid.Column="1" Width="280" Height="80" Content="Lifting Pal"  FontSize="50" FontWeight="Bold"  ></Label>
-
+        <Label Grid.ColumnSpan="2" Grid.Column="1" Width="280" Height="80" Content="Lifting Pal"  FontSize="50" FontWeight="Bold" BorderBrush="Red" Foreground="Blue" ></Label>
+       <!-- <ListBox Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="3"> </ListBox> -->
+        
     </Grid>
 </Controls:MetroWindow>

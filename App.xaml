@@ -4,6 +4,17 @@
              xmlns:local="clr-namespace:Lifting_App"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+     <!--   <Style x:Key="WaterMarkTextBox" TargetType="{x:Type TextBox}">
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Template">
+                <Setter.value>
+                    <Control Target="{x:Type TextBox}">
+                        
+                    </Control>
+                </Setter.value>
+            </Setter>
+        </Style> -->
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <!-- MahApps.Metro resource dictionaries. Make sure that all file names are Case Sensitive! -->
