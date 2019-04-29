@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lifting_App"
         mc:Ignorable="d"
-        Title="TdeeCaclculatorWindow" Height="450" Width="400" Background="Black" WindowStartupLocation="CenterScreen">
+        Title="TdeeCaclculatorWindow" Height="550" Width="400" Background="Black" WindowStartupLocation="CenterScreen">
 
     
     
@@ -52,8 +52,8 @@
         <RadioButton Name="Female" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Width="20" Height="20"   ></RadioButton>
         <Label Content="Female" BorderBrush="White" Foreground="White" FontSize="20" Margin="30,0,0,0" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" ></Label>
 
-        <Button Name="CalcMax" Height="50" Width="180" Content="Calculate TDEE" Background="Blue"  VerticalAlignment="Center" Grid.Row="4" Grid.ColumnSpan="2" FontSize="20" Click="CalcMax_Click"></Button>
-        
+        <Button Name="CalcMax" Height="50" Width="180" Content="Calculate TDEE" Background="Blue"  VerticalAlignment="Top" Grid.Row="4" Grid.ColumnSpan="2" FontSize="20" Click="CalcMax_Click"></Button>
+        <Button Name="SaveMax"  Height="50" Width="180" Content="Save To Json" Background="Blue"  VerticalAlignment="Center" Grid.Row="4" Grid.RowSpan="2" Grid.ColumnSpan="2" FontSize="20" Click="SaveMax_Click"> </Button>
         
         
     </Grid>

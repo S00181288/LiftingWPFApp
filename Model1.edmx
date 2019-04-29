@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="LiftingDataBaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Passwords">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Password" Type="nchar" MaxLength="10" />
+          <Property Name="UserName" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="PasswordStore">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Password" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="UserNames">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityContainer Name="LiftingDataBaseModelStoreContainer">
+          <EntitySet Name="Passwords" EntityType="Self.Passwords" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PasswordStore" EntityType="Self.PasswordStore" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserNames" EntityType="Self.UserNames" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LiftingDataBaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Password">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Password1" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="UserName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PasswordStore">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="UserName">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="UserName1" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="LiftingDataBaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Passwords" EntityType="Self.Password" />
+          <EntitySet Name="PasswordStores" EntityType="Self.PasswordStore" />
+          <EntitySet Name="UserNames" EntityType="Self.UserName" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LiftingDataBaseModelStoreContainer" CdmEntityContainer="LiftingDataBaseEntities">
+          <EntitySetMapping Name="Passwords">
+            <EntityTypeMapping TypeName="LiftingDataBaseModel.Password">
+              <MappingFragment StoreEntitySet="Passwords">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Password1" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PasswordStores">
+            <EntityTypeMapping TypeName="LiftingDataBaseModel.PasswordStore">
+              <MappingFragment StoreEntitySet="PasswordStore">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserNames">
+            <EntityTypeMapping TypeName="LiftingDataBaseModel.UserName">
+              <MappingFragment StoreEntitySet="UserNames">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserName1" ColumnName="UserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

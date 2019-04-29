@@ -6,9 +6,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lifting_App"
         mc:Ignorable="d"
-        Title="LiftingPlans" Height="450" Width="800" Background="Black" WindowStartupLocation="CenterScreen"> 
+        Title="LiftingPlans" Height="450" Width="800" Background="Black" WindowStartupLocation="CenterScreen" Loaded="MetroWindow_Loaded"
     
-    <Grid>
+    
+    
+    > 
         
+    <Grid>
+        <ListBox Name="ShowPlans" Width="500" Height="300" SelectionChanged="ShowPlans_SelectionChanged"  > </ListBox>
+        <Button Width="100" Height="50" VerticalAlignment="Center" HorizontalAlignment="Right" Content="Show Plan" FontSize="12" Click="Button_Click"   ></Button>
+        <ComboBox Width="100" Height="50" VerticalAlignment="Center" HorizontalAlignment="Left"  FontSize="12" Name="PlanComboBox" SelectionChanged="PlanComboBox_SelectionChanged"    ></ComboBox>
+        <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" Width="180" Height="50" Name="LabelTest"  > </TextBlock>
     </Grid>
 </Controls:MetroWindow>

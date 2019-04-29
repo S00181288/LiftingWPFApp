@@ -12,6 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace Lifting_App
 {
@@ -178,6 +180,13 @@ namespace Lifting_App
 
             textBox.Text = newText;
             textBox.SelectionStart = selectionStart <= textBox.Text.Length ? selectionStart : textBox.Text.Length;
+        }
+
+        //Writing data to Json
+        private void SaveMax_Click(object sender, RoutedEventArgs e)
+        {
+            //write data to a new file.
+            //string json = JsonConvert.SerializeObject()
         }
     }
 }

@@ -51,5 +51,12 @@ namespace Lifting_App
             LiftingPlans.ShowDialog();
 
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            LoginPage loginPage = new LoginPage();
+            loginPage.Owner = this;
+            loginPage.ShowDialog();
+        }
     }
 }

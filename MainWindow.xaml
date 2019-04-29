@@ -33,7 +33,7 @@
 
 
         <Button  Height="50" Width="180" Content="Lifting plans"   Background="Blue" VerticalAlignment="Center" FontSize="20" Click="Button_Click_1"  ></Button>
-        <Button  Height="50" Width="180" Content="Food Tracker"   Background="Blue" VerticalAlignment="Center" Grid.Row="1" FontSize="20"></Button>
+        <Button  Height="50" Width="180" Content="Food Tracker"   Background="Blue" VerticalAlignment="Center" Grid.Row="1" FontSize="20" Click="Button_Click_2"></Button>
         <Button  Height="50" Width="180" Content="1Rep Max Calc"   Background="Blue" VerticalAlignment="Center" Grid.Row="2" FontSize="20" Click="Button_Click"></Button>
         <Button  Height="50" Width="180" Content="TDEE Calculator"   Background="Blue" VerticalAlignment="Center" Grid.Row="3" FontSize="20" Click="TDEECalc" ></Button>
             

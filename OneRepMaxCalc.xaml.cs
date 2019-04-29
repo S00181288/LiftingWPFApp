@@ -28,73 +28,96 @@ namespace Lifting_App
         private void CalcMax_Click(object sender, RoutedEventArgs e)
         {
 
-            int weightcalc = int.Parse(Weight.Text);
-            int repscalc = int.Parse(Reps.Text);
+            /*  if(Weight.Text == "" || Reps.Text == "")
+              {
+                  MessageBox.Show("Please enter weight and reps", "Alert", MessageBoxButton.OK, MessageBoxImage.Information);
+              } 
+              */
+
+
+
 
             double RepsMultiple = 0;
 
-            if(repscalc > 10 || repscalc <= 0 || weightcalc <= 0)
+            if (Weight.Text == "" || Reps.Text == "")
             {
 
                 MessageBox.Show("Enter a rep range between 1 and 10. And a weight above 0.", "Alert", MessageBoxButton.OK, MessageBoxImage.Information);
 
             }
-            else
-            {
-                switch (repscalc)
+            else {
+
+
+                int weightcalc = int.Parse(Weight.Text);
+                int repscalc = int.Parse(Reps.Text);
+
+
+                if (repscalc >= 1 || repscalc < 11 && weightcalc > 0 )
                 {
-                    case 1:
-                        RepsMultiple = 1;
-                        break;
 
-                    case 2:
-                        RepsMultiple = 1.05;
-                        break;
 
-                    case 3:
-                        RepsMultiple = 1.08;
-                        break;
 
-                    case 4:
-                        RepsMultiple = 1.11;
-                        break;
 
-                    case 5:
-                        RepsMultiple = 1.15;
-                        break;
+                    switch (repscalc)
+                    {
+                        case 1:
+                            RepsMultiple = 1;
+                            break;
 
-                    case 6:
-                        RepsMultiple = 1.18;
-                        break;
+                        case 2:
+                            RepsMultiple = 1.05;
+                            break;
 
-                    case 7:
-                        RepsMultiple = 1.20;
-                        break;
+                        case 3:
+                            RepsMultiple = 1.08;
+                            break;
 
-                    case 8:
-                        RepsMultiple = 1.25;
-                        break;
+                        case 4:
+                            RepsMultiple = 1.11;
+                            break;
 
-                    case 9:
-                        RepsMultiple = 1.30;
-                        break;
+                        case 5:
+                            RepsMultiple = 1.15;
+                            break;
 
-                    case 10:
-                        RepsMultiple = 1.33;
+                        case 6:
+                            RepsMultiple = 1.18;
+                            break;
 
-                        break;
+                        case 7:
+                            RepsMultiple = 1.20;
+                            break;
 
-                    default:
-                        break;
+                        case 8:
+                            RepsMultiple = 1.25;
+                            break;
+
+                        case 9:
+                            RepsMultiple = 1.30;
+                            break;
+
+                        case 10:
+                            RepsMultiple = 1.33;
+
+                            break;
+
+                        default:
+                            break;
+                    }
+
+                    double Estimate = weightcalc * RepsMultiple;
+
+                    string MaxEstimate = string.Format("Max Estimate {0} {1}", Environment.NewLine, Estimate);
+                    Max.Text = (MaxEstimate);
+
                 }
 
-                double Estimate = weightcalc * RepsMultiple;
-
-                string MaxEstimate = string.Format("Max Estimate {0} {1}", Environment.NewLine, Estimate);
-                Max.Text = (MaxEstimate);
+                else
+                {
+                    MessageBox.Show("Enter a rep range between 1 and 10. And a weight above 0.", "Alert", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
 
             }
-          
         }
 
         private void Reps_TextChanged(object sender, TextChangedEventArgs e)
