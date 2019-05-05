@@ -35,10 +35,6 @@ namespace Lifting_App
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-          /*  Window2 window2 = new Window2();
-            window2.Owner = this;
-            window2.ShowDialog(); */
-
             OneRepMaxCalc oneRepMax = new OneRepMaxCalc();
             oneRepMax.Owner = this;
             oneRepMax.ShowDialog();
@@ -49,14 +45,13 @@ namespace Lifting_App
             LiftingPlans LiftingPlans = new LiftingPlans();
             LiftingPlans.Owner = this;
             LiftingPlans.ShowDialog();
-
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            LoginPage loginPage = new LoginPage();
-            loginPage.Owner = this;
-            loginPage.ShowDialog();
+            ExerciseGuide exerciseGuide = new ExerciseGuide();
+            exerciseGuide.Owner = this;
+            exerciseGuide.ShowDialog();
         }
     }
 }

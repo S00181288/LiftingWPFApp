@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Data.Entity;
+using System.Data.Sql;
 
 namespace Lifting_App
 {
@@ -20,7 +21,8 @@ namespace Lifting_App
     /// </summary>
     public partial class LoginPage : Window
     {
-        LiftingDataBaseEntities db = new LiftingDataBaseEntities();
+        //LiftingDataBaseEntities db = new LiftingDataBaseEntities();
+        LiftingDataBaseEntities1 db = new LiftingDataBaseEntities1();
         
         public LoginPage()
         {
@@ -30,29 +32,35 @@ namespace Lifting_App
         private void Button_Click(object sender, RoutedEventArgs e)
         {
           
-            string Pass = Password.Text.ToString();
+            string Pass = PasswordEntry.Password.ToString();
             string login = UserLogin.Text.ToString();
 
-            var queryFinal = (from p in db.Passwords
-                             where p.UserName.Equals(login)
-                             select p.Password1).First();
-
-
-            //heck if match
-            if (queryFinal == Pass)
+            try
             {
-                MainWindow mainwindow = new MainWindow();
-                mainwindow.Owner = this;
-                mainwindow.ShowDialog();
-                MessageBox.Show("Correct");
-            }
-            else
-            {
-                MessageBox.Show("Incorrect");
-            }
+                var queryFinal = (from p in db.Passwords
+                                  where p.UserName.Equals(login)
+                                  select p.Password1.Trim()).First();
+
+                if (queryFinal == Pass)
+                {
+
+                    MainWindow mainwindow = new MainWindow();
+                    mainwindow.Owner = this;
+                    mainwindow.ShowDialog();
+                    //MessageBox.Show("Correct");
+
+                }
+                else
+                {
+                    MessageBox.Show("Incorrect password, Please Enter a valid combination.");
+                }
                 
-
-
+            }
+            catch
+            {
+                MessageBox.Show("Incorrect Username and password, Please Enter a valid combination.");
+            }
+        
 
             /*    var query = from a in db.Passwords
                             where a.Password1.Contains(login)
@@ -126,6 +134,24 @@ namespace Lifting_App
                */
 
            
+        }
+
+        //Login Button adding login details
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+            Password details = new Password()
+            {
+                Id = 227,
+                Password1 = PasswordEntry.Password ,
+                UserName = UserLogin.Text.ToString()
+            };
+
+            // Add the new object to the Orders collection.
+            db.Passwords.Add(details);
+
+            db.SaveChanges();
+
         }
     }
 }

@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1ae51866e03d44149dfeed1bf539aa85" Name="Diagram1">
+      <Diagram DiagramId="5da2a22e13474ba69fae6647ed5e1a4b" Name="Diagram1">
         <EntityTypeShape EntityType="LiftingDataBaseModel.Password" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="LiftingDataBaseModel.PasswordStore" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="LiftingDataBaseModel.UserName" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />

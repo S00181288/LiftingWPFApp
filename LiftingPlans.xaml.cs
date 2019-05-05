@@ -22,6 +22,9 @@ namespace Lifting_App
     {
 
         public List<string> TexasMethodPlan = new List<string>();
+
+        LiftingDataBaseEntities1 db = new LiftingDataBaseEntities1();
+
         public enum PlanList { SelectPlan, TexasMethod, Hobby, Exercise, Work, Family }
 ;
 
@@ -71,17 +74,10 @@ namespace Lifting_App
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            /*LabelTest.Text = Query.ToString();
-
-            var query = from a in db.TexasMethods
+            var query = from a in db.Passwords
                         select a;
 
-            var query1 = from a in db.st
-
-            ShowPlans.ItemsSource = query.ToList();*/
-
-
-            //ShowPlans.ItemsSource = TexasMethodPlan.ToList();
+            ShowPlans.ItemsSource = query.ToList();
         }
 
         private void PlanComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

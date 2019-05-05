@@ -13,10 +13,10 @@ namespace Lifting_App
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class LiftingDataBaseEntities : DbContext
+    public partial class LiftingDataBaseEntities1 : DbContext
     {
-        public LiftingDataBaseEntities()
-            : base("name=LiftingDataBaseEntities")
+        public LiftingDataBaseEntities1()
+            : base("name=LiftingDataBaseEntities1")
         {
         }
     

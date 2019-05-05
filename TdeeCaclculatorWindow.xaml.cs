@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
 using Newtonsoft.Json;
+using Microsoft.Win32;
 
 namespace Lifting_App
 {
@@ -37,7 +38,7 @@ namespace Lifting_App
         private void CalcMax_Click(object sender, RoutedEventArgs e)
         {
 
-
+            //error message.
             if (Male.IsChecked == false && Female.IsChecked == false || ComboBoxActivity.SelectedIndex == 5 || heighttxt.Text == "" || agetxt.Text == "" || weighttxt.Text == "" )
             {
                 MessageBox.Show("Please select a gender and Enter a height, weight and age.", "Alert", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -47,8 +48,8 @@ namespace Lifting_App
 
                 int ActivityLevel = ComboBoxActivity.SelectedIndex;
                 double ActivityMultiple = 0;
-                double Malecalc = 0;
-                double Femalcalc = 0;
+               // double Malecalc = 0;
+               // double Femalcalc = 0;
 
 
 
@@ -176,17 +177,20 @@ namespace Lifting_App
                     if (c == '.')
                         count += 1;
                 }
-            }
-
+            } 
             textBox.Text = newText;
             textBox.SelectionStart = selectionStart <= textBox.Text.Length ? selectionStart : textBox.Text.Length;
         }
 
-        //Writing data to Json
-        private void SaveMax_Click(object sender, RoutedEventArgs e)
+        //Writing data to Json and opens dialog box.
+        private void SaveTDEE_Click(object sender, RoutedEventArgs e)
         {
-            //write data to a new file.
-            //string json = JsonConvert.SerializeObject()
+            string TDEEResult = TDEEtxt.Text;
+           
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            if (saveFileDialog.ShowDialog() == true)
+                File.WriteAllText(saveFileDialog.FileName, TDEEResult);
+
         }
     }
 }

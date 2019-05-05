@@ -59,7 +59,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="UserName1" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
         </EntityType>
-        <EntityContainer Name="LiftingDataBaseEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="LiftingDataBaseEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Passwords" EntityType="Self.Password" />
           <EntitySet Name="PasswordStores" EntityType="Self.PasswordStore" />
           <EntitySet Name="UserNames" EntityType="Self.UserName" />
@@ -69,7 +69,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="LiftingDataBaseModelStoreContainer" CdmEntityContainer="LiftingDataBaseEntities">
+        <EntityContainerMapping StorageEntityContainer="LiftingDataBaseModelStoreContainer" CdmEntityContainer="LiftingDataBaseEntities1">
           <EntitySetMapping Name="Passwords">
             <EntityTypeMapping TypeName="LiftingDataBaseModel.Password">
               <MappingFragment StoreEntitySet="Passwords">

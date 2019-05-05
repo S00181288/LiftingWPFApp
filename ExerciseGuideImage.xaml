@@ -1,0 +1,14 @@
+﻿<Window x:Class="Lifting_App.ExerciseGuideImage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lifting_App"
+        mc:Ignorable="d"
+        Title="ExerciseGuideImage" Height="450" Width="800">
+    <Grid>
+        
+        <Label Name="testlabel" Width="100" Height="50" VerticalAlignment="Bottom" > </Label>
+        <Image Name="ImageBack" Height="450" Width="800" Source="" ></Image>
+    </Grid>
+</Window>
